@@ -19,11 +19,15 @@ namespace Shanta.Core.Entities.Product
 
         public decimal Price { get; set; }
 
-        public int BrandId { get; set; } // FK
+        public Guid BrandId { get; set; } // FK
         
         public ProductBrand Brand { get; set; } // navigation property [one]
 
-        public int CategoryId { get; set; } // FK
+        public Guid CategoryId { get; set; } // FK
         public ProductCategory Category { get; set; } // navigation property [one]
+
+        public bool HasVariants { get; set; } // Indicates if the product has variants
+
+        public List<ProductVariant> Variants { get; set; } // Navigation property for product variants
     }
 }
