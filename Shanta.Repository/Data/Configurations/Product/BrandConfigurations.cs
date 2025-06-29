@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shanta.Repository.Data.Configurations
+namespace Shanta.Repository.Data.Configurations.Product
 {
-    public class CategoryConfigurations : IEntityTypeConfiguration<ProductCategory>
+    internal class BrandConfigurations : IEntityTypeConfiguration<ProductBrand>
     {
-        public void Configure(EntityTypeBuilder<ProductCategory> builder)
+        public void Configure(EntityTypeBuilder<ProductBrand> builder)
         {
-            builder.Property(c => c.CategoryName).IsRequired();
+            builder.Property(b => b.BrandName).IsRequired();
         }
     }
 }

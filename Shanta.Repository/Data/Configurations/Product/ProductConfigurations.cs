@@ -1,17 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Shanta.Core.Entities.Product;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Shanta.Repository.Data.Configurations
+
+namespace Shanta.Repository.Data.Configurations.Product
 {
-    public class ProductConfigurations : IEntityTypeConfiguration<Product>
+    public class ProductConfigurations : IEntityTypeConfiguration<Shanta.Core.Entities.Product.Product>
     {
-        public void Configure(EntityTypeBuilder<Product> builder)
+        public void Configure(EntityTypeBuilder<Shanta.Core.Entities.Product.Product> builder)
         {
             builder.Property(p => p.Name).IsRequired().HasMaxLength(100);
 

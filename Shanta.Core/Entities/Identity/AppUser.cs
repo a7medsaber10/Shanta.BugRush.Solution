@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shanta.Core.Entities
+namespace Shanta.Core.Entities.Identity
 {
-    public class BaseEntity
+    public class AppUser
     {
-        public Guid Id { get; set; }
     }
 }

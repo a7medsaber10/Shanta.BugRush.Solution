@@ -20,7 +20,7 @@ namespace Shanta.APIs
 
             builder.Services.AddDbContext<StoreContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("AI"));
             });
 
             var app = builder.Build();
