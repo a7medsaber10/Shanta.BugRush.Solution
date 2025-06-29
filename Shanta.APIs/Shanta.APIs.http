@@ -1,0 +1,6 @@
+@Shanta.APIs_HostAddress = http://localhost:5122
+
+GET {{Shanta.APIs_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

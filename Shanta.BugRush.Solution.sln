@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shanta.APIs", "Shanta.APIs\Shanta.APIs.csproj", "{33520EC6-D938-4CC3-9FFA-94703F074753}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shanta.Core", "Shanta.Core\Shanta.Core.csproj", "{334C6814-42C2-4409-95FB-1FA00EA607B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shanta.Repository", "Shanta.Repository\Shanta.Repository.csproj", "{5C612AAE-E91B-4250-B281-1B954D6E1E4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shanta.Services", "Shanta.Services\Shanta.Services.csproj", "{BEAD693F-4CE2-4F99-B5AF-C879CC569D93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33520EC6-D938-4CC3-9FFA-94703F074753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33520EC6-D938-4CC3-9FFA-94703F074753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33520EC6-D938-4CC3-9FFA-94703F074753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33520EC6-D938-4CC3-9FFA-94703F074753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{334C6814-42C2-4409-95FB-1FA00EA607B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{334C6814-42C2-4409-95FB-1FA00EA607B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{334C6814-42C2-4409-95FB-1FA00EA607B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{334C6814-42C2-4409-95FB-1FA00EA607B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C612AAE-E91B-4250-B281-1B954D6E1E4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C612AAE-E91B-4250-B281-1B954D6E1E4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C612AAE-E91B-4250-B281-1B954D6E1E4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C612AAE-E91B-4250-B281-1B954D6E1E4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEAD693F-4CE2-4F99-B5AF-C879CC569D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEAD693F-4CE2-4F99-B5AF-C879CC569D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEAD693F-4CE2-4F99-B5AF-C879CC569D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEAD693F-4CE2-4F99-B5AF-C879CC569D93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48243DDB-83FA-4AF2-B059-37610184F3BF}
+	EndGlobalSection
+EndGlobal
