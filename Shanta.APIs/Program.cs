@@ -41,6 +41,9 @@ namespace Shanta.APIs
             {
                 // SaveChanges Automatically when running the app 
                 await _dbContext.Database.MigrateAsync();
+
+                // Seeding Data
+                await StoreContextSeed.SeedAsync(_dbContext);
             }
             catch (Exception ex)
             {
