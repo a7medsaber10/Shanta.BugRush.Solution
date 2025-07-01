@@ -8,7 +8,7 @@ namespace Shanta.Core.Entities.Product
 {
     public class ProductVariant : BaseEntity
     {
-        public string AttributeName { get; set; } // Name of the attribute (e.g., Color, Size)
+        public VariantAttributes AttributeName { get; set; } // Name of the attribute (e.g., Color, Size)
 
         public string AttributeValue { get; set; } // Value of the attribute (e.g., Red, Large)
 

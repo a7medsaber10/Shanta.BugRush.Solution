@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Shanta.APIs.Extensions;
 using Shanta.Core.Repository.Contract;
 using Shanta.Repository.Data;
 using Shanta.Repository.Repositories;
@@ -22,10 +23,12 @@ namespace Shanta.APIs
 
             builder.Services.AddDbContext<StoreContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("AI"));
             });
 
             // register the service of GenericRepository
+            builder.Services.AddAuthentication();
+            builder.Services.ConfigureIdentity();
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             var app = builder.Build();
@@ -60,6 +63,7 @@ namespace Shanta.APIs
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
