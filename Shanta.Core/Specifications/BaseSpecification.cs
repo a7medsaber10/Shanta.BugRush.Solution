@@ -28,12 +28,12 @@ namespace Shanta.Core.Specifications
             Criteria = criteria;
         }
 
-        public void AddOrederBy(Expression<Func<T, object>> orderByExpression)
+        public void AddOrderBy(Expression<Func<T, object>> orderByExpression)
         {
             OrderBy = orderByExpression;
         }
 
-        public void AddOrederByDesc(Expression<Func<T, object>> orderByDescExpression)
+        public void AddOrderByDesc(Expression<Func<T, object>> orderByDescExpression)
         {
             OrderByDesc = orderByDescExpression;
         }

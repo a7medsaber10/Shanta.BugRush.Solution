@@ -1,7 +1,9 @@
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Shanta.Core.Repository.Contract;
 using Shanta.Repository.Data;
+using Shanta.Repository.Repositories;
 
 namespace Shanta.APIs
 {
@@ -22,6 +24,9 @@ namespace Shanta.APIs
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            // register the service of GenericRepository
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             var app = builder.Build();
 
