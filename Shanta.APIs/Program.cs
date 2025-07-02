@@ -26,10 +26,12 @@ namespace Shanta.APIs
                 options.UseSqlServer(builder.Configuration.GetConnectionString("AI"));
             });
 
-            // register the service of GenericRepository
+            // Register required services
+            builder.Services.AddApplicationServices();
+
+
             builder.Services.AddAuthentication();
             builder.Services.ConfigureIdentity();
-            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             var app = builder.Build();
 
@@ -57,8 +59,7 @@ namespace Shanta.APIs
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerMiddleWare();
             }
 
             app.UseHttpsRedirection();
