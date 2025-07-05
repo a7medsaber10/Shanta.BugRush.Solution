@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Shanta.Core.Entities.Identity;
 using Shanta.Core.Entities.Order;
 using Shanta.Core.Entities.Product;
+using Shanta.Core.Entities.Support;
 using Shanta.Repository.Data.Configurations.Roles;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,10 @@ namespace Shanta.Repository.Data
         public DbSet<OrderCoupons> OrderCoupons { get; set; }
 
         public DbSet<Reviews> Reviews { get; set; }
+
+        public DbSet<SupportTicket> supportTickets { get; set; }
+
+        public DbSet<TicketResponse> TicketResponses { get; set; }
 
 
     }

@@ -14,7 +14,7 @@ namespace Shanta.Core.Entities.Support
         public string UserId { get; set; } // ID of the user who provided the response
 
         public AppUser? User { get; set; } // Navigation property to the user who provided the response
-        public string TicketId { get; set; } // ID of the associated support ticket
+        public Guid TicketId { get; set; } // ID of the associated support ticket
         public SupportTicket? Ticket { get; set; } // Navigation property to the associated support ticket
     }
 }
