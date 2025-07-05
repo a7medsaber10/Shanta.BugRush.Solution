@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Shanta.Repository\Shanta.Repository.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
