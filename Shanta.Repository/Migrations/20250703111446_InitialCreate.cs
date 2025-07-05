@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Shanta.Repository.Migrations
 {
     /// <inheritdoc />
-    public partial class intial : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -219,7 +219,7 @@ namespace Shanta.Repository.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -244,13 +244,13 @@ namespace Shanta.Repository.Migrations
                         column: x => x.BrandId,
                         principalTable: "ProductBrands",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Products_ProductCategories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "ProductCategories",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -269,13 +269,13 @@ namespace Shanta.Repository.Migrations
                         column: x => x.CouponId,
                         principalTable: "Coupons",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_OrderCoupons_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -297,7 +297,7 @@ namespace Shanta.Repository.Migrations
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -318,13 +318,13 @@ namespace Shanta.Repository.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Reviews_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -346,19 +346,18 @@ namespace Shanta.Repository.Migrations
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_OrderItems_ProductVariants_ProductVariantId",
                         column: x => x.ProductVariantId,
                         principalTable: "ProductVariants",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_OrderItems_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.InsertData(
@@ -366,13 +365,13 @@ namespace Shanta.Repository.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-        { "2228c787-a9e2-43ec-8658-5de9fe6d97c2", null, "customer", "CUSTOMER" },
-        { "25a90f41-2d08-4f31-a111-9d6114af3277", null, "delivery", "DELIVERY" },
-        { "2734a194-6f8f-476c-a3f4-787caba328a7", null, "admin", "ADMIN" },
-        { "320f5bf5-b9ba-43b0-939a-aa15e9cdebaf", null, "warehousemanager", "WAREHOUSEMANAGER" },
-        { "42d2711b-d266-462f-87ba-560a89e86e35", null, "technicalsupport", "TECHNICALSUPPORT" },
-        { "7308d69d-9a86-4c4f-bfd8-813c9b38cdee", null, "hr", "HR" },
-        { "991e6fa2-f7d1-4746-b16e-b52a5ca06434", null, "supplier", "SUPPLIER" }
+                    { "2789d79a-d2e1-4ce5-949f-2c67af85522e", null, "admin", "ADMIN" },
+                    { "29725440-9079-41c7-8628-9c85d35232e4", null, "hr", "HR" },
+                    { "5d6b1234-78ab-4f6e-8a68-188552d8034c", null, "technicalsupport", "TECHNICALSUPPORT" },
+                    { "8162b920-c6bc-4126-ad34-6f8f876d0568", null, "customer", "CUSTOMER" },
+                    { "91573a37-666c-4656-b75c-f94583e6fe52", null, "warehousemanager", "WAREHOUSEMANAGER" },
+                    { "a6366f8c-6f55-4571-b11d-a9a255acf0fb", null, "delivery", "DELIVERY" },
+                    { "cc2ecce0-a1a2-4aaf-9328-42eb06c479ef", null, "supplier", "SUPPLIER" }
                 });
 
             migrationBuilder.CreateIndex(

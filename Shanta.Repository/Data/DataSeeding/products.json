@@ -3,144 +3,144 @@
         "Name": "Double Caramel Frappuccino",
         "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
         "Price": 200,
-        "PictureUrl": "images/products/sb-ang1.png",
-        "CategoryId": 1,
-        "BrandId": 1
+        "ImageUrl": "images/products/sb-ang1.png",
+        "BrandId": "405c97a5-f7d3-44d8-6324-08ddbae2ecec",
+        "CategoryId" : "e59185f4-7dd3-4c4e-6dbd-08ddbae342ea"
     },
     {
         "Name": "White Chocolate Mocha Frappuccino",
         "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
         "Price": 150,
-        "PictureUrl": "images/products/sb-ang2.png",
-        "CategoryId": 1,
-        "BrandId": 1
+        "ImageUrl": "images/products/sb-ang2.png",
+        "BrandId": "8ef30bb1-526b-4d02-6326-08ddbae2ecec",
+        "CategoryId" : "e59185f4-7dd3-4c4e-6dbd-08ddbae342ea"
     },
     {
         "Name": "Iced Cafe Latte",
         "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
         "Price": 180,
-        "PictureUrl": "images/products/sb-core1.png",
-        "CategoryId": 2,
-        "BrandId": 1
+        "ImageUrl": "images/products/sb-core1.png",
+        "BrandId": "5edaed3d-e9b3-4e4a-6325-08ddbae2ecec",
+        "CategoryId" : "bf91eb08-8692-47a6-6dbe-08ddbae342ea"
     },
     {
         "Name": "White Chocolate Mocha",
         "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
         "Price": 300,
-        "PictureUrl": "images/products/sb-core2.png",
-        "CategoryId": 3,
-        "BrandId": 2
+        "ImageUrl": "images/products/sb-core2.png",
+        "BrandId": "0a692200-350f-4c2e-6328-08ddbae2ecec",
+        "CategoryId" : "682d4811-8c7a-4898-6dbf-08ddbae342ea"
     },
     {
         "Name": "Iced Caramel Macchiato",
         "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
         "Price": 250,
-        "PictureUrl": "images/products/sb-react1.png",
-        "CategoryId": 4,
-        "BrandId": 1
+        "ImageUrl": "images/products/sb-react1.png",
+        "BrandId": "b65b3d46-9e63-4d57-6329-08ddbae2ecec",
+        "CategoryId" : "c7ffd24d-684f-4ba7-6dc0-08ddbae342ea"
     },
     {
         "Name": "Hot Caramel Macchiato",
         "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
         "Price": 120,
-        "PictureUrl": "images/products/sb-ts1.png",
-        "CategoryId": 4,
-        "BrandId": 5
+        "ImageUrl": "images/products/sb-ts1.png",
+        "BrandId": "b65b3d46-9e63-4d57-6329-08ddbae2ecec",
+        "CategoryId" : "c7ffd24d-684f-4ba7-6dc0-08ddbae342ea"
     },
     {
         "Name": "Iced Matcha Latte",
         "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
         "Price": 10,
-        "PictureUrl": "images/products/hat-core1.png",
-        "CategoryId": 5,
-        "BrandId": 2
+        "ImageUrl": "images/products/hat-core1.png",
+        "BrandId": "be44fa9c-0ee2-4df9-632a-08ddbae2ecec",
+        "CategoryId" : "7dd15042-91f7-482e-6dc1-08ddbae342ea"
     },
     {
         "Name": "Honey Cake",
         "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
         "Price": 8,
-        "PictureUrl": "images/products/hat-react1.png",
-        "CategoryId": 6,
-        "BrandId": 1
+        "ImageUrl": "images/products/hat-react1.png",
+        "BrandId": "09a634e7-2606-49f4-6327-08ddbae2ecec",
+        "CategoryId" : "07535b61-136a-4d96-6dc2-08ddbae342ea"
     },
     {
         "Name": "Blueberry Cheesecake",
         "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
         "Price": 15,
-        "PictureUrl": "images/products/hat-react2.png",
-        "CategoryId": 6,
-        "BrandId": 1
+        "ImageUrl": "images/products/hat-react2.png",
+        "BrandId": "0a692200-350f-4c2e-6328-08ddbae2ecec",
+        "CategoryId" : "07535b61-136a-4d96-6dc2-08ddbae342ea"
     },
     {
         "Name": "Glazed Donuts",
         "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
         "Price": 18,
-        "PictureUrl": "images/products/glove-code1.png",
-        "CategoryId": 7,
-        "BrandId": 3
+        "ImageUrl": "images/products/glove-code1.png",
+        "BrandId": "be44fa9c-0ee2-4df9-632a-08ddbae2ecec",
+        "CategoryId" : "dab25ed9-0402-49b0-6dc3-08ddbae342ea"
     },
     {
         "Name": "Greek Salad",
         "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
         "Price": 15,
-        "PictureUrl": "images/products/glove-code2.png",
-        "CategoryId": 7,
-        "BrandId": 1
+        "ImageUrl": "images/products/glove-code2.png",
+        "BrandId": "0a692200-350f-4c2e-6328-08ddbae2ecec",
+        "CategoryId" : "36430e54-b160-451e-6dc4-08ddbae342ea"
     },
     {
         "Name": "Iced Black Tea Lemonade",
         "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
         "Price": 16,
-        "PictureUrl": "images/products/glove-react1.png",
-        "CategoryId": 4,
-        "BrandId": 4
+        "ImageUrl": "images/products/glove-react1.png",
+        "BrandId": "0a692200-350f-4c2e-6328-08ddbae2ecec",
+        "CategoryId" : "7dd15042-91f7-482e-6dc1-08ddbae342ea"
     },
     {
         "Name": "Iced London Fog Tea Latte",
         "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
         "Price": 14,
-        "PictureUrl": "images/products/glove-react2.png",
-        "CategoryId": 4,
-        "BrandId": 4
+        "ImageUrl": "images/products/glove-react2.png",
+        "BrandId": "0a692200-350f-4c2e-6328-08ddbae2ecec",
+        "CategoryId" : "7dd15042-91f7-482e-6dc1-08ddbae342ea"
     },
     {
         "Name": "Turkey Bacon, Cheddar & Egg White Sandwich",
         "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
         "Price": 250,
-        "PictureUrl": "images/products/boot-redis1.png",
-        "CategoryId": 3,
-        "BrandId": 6
+        "ImageUrl": "images/products/boot-redis1.png",
+        "BrandId": "0a692200-350f-4c2e-6328-08ddbae2ecec",
+        "CategoryId" : "7dd15042-91f7-482e-6dc1-08ddbae342ea"
     },
     {
         "Name": "Core Red Boots",
         "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
         "Price": 189.99,
-        "PictureUrl": "images/products/boot-core2.png",
-        "CategoryId": 3,
-        "BrandId": 2
+        "ImageUrl": "images/products/boot-core2.png",
+        "BrandId": "0a692200-350f-4c2e-6328-08ddbae2ecec",
+        "CategoryId" : "7dd15042-91f7-482e-6dc1-08ddbae342ea"
     },
     {
         "Name": "Double-Smoked Bacon, Cheddar & Egg Sandwich",
         "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
         "Price": 199.99,
-        "PictureUrl": "images/products/boot-core1.png",
-        "CategoryId": 3,
-        "BrandId": 2
+        "ImageUrl": "images/products/boot-core1.png",
+        "BrandId": "0a692200-350f-4c2e-6328-08ddbae2ecec",
+        "CategoryId" : "7dd15042-91f7-482e-6dc1-08ddbae342ea"
     },
     {
         "Name": "Iced Chai Tea Latte with Oleato Golden Foam",
         "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
         "Price": 150,
-        "PictureUrl": "images/products/boot-ang2.png",
-        "CategoryId": 3,
-        "BrandId": 1
+        "ImageUrl": "images/products/boot-ang2.png",
+        "BrandId": "0a692200-350f-4c2e-6328-08ddbae2ecec",
+        "CategoryId" : "7dd15042-91f7-482e-6dc1-08ddbae342ea"
     },
     {
         "Name": "Dragon Drink® Starbucks Refreshers® Beverage with Oleato Golden Foam",
         "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
         "Price": 180,
-        "PictureUrl": "images/products/boot-ang1.png",
-        "CategoryId": 3,
-        "BrandId": 1
+        "ImageUrl": "images/products/boot-ang1.png",
+        "BrandId": "0a692200-350f-4c2e-6328-08ddbae2ecec",
+        "CategoryId" : "7dd15042-91f7-482e-6dc1-08ddbae342ea"
     }
 ]

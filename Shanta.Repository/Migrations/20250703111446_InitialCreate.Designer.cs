@@ -12,8 +12,8 @@ using Shanta.Repository.Data;
 namespace Shanta.Repository.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20250701171302_intial")]
-    partial class intial
+    [Migration("20250703111446_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,85 +54,43 @@ namespace Shanta.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2734a194-6f8f-476c-a3f4-787caba328a7",
+                            Id = "2789d79a-d2e1-4ce5-949f-2c67af85522e",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "ccb5ed05-5ea0-439a-82ee-bbb3ec52024c",
+                            Id = "8162b920-c6bc-4126-ad34-6f8f876d0568",
                             Name = "customer",
                             NormalizedName = "CUSTOMER"
                         },
                         new
                         {
-                            Id = "bf9ff6e6-61f9-4002-b283-9cb7c7e5d8e2",
+                            Id = "a6366f8c-6f55-4571-b11d-a9a255acf0fb",
                             Name = "delivery",
                             NormalizedName = "DELIVERY"
                         },
                         new
                         {
-                            Id = "320f5bf5-b9ba-43b0-939a-aa15e9cdebaf",
+                            Id = "91573a37-666c-4656-b75c-f94583e6fe52",
                             Name = "warehousemanager",
                             NormalizedName = "WAREHOUSEMANAGER"
                         },
                         new
                         {
-                            Id = "7308d69d-9a86-4c4f-bfd8-813c9b38cdee",
+                            Id = "29725440-9079-41c7-8628-9c85d35232e4",
                             Name = "hr",
                             NormalizedName = "HR"
                         },
                         new
                         {
-                            Id = "fcb7e42d-3be1-456e-91ef-719cfe2572f1",
+                            Id = "cc2ecce0-a1a2-4aaf-9328-42eb06c479ef",
                             Name = "supplier",
                             NormalizedName = "SUPPLIER"
                         },
                         new
                         {
-                            Id = "42d2711b-d266-462f-87ba-560a89e86e35",
-                            Name = "technicalsupport",
-                            NormalizedName = "TECHNICALSUPPORT"
-                        },
-                        new
-                        {
-                            Id = "bdd90a9b-a949-45e7-ba09-d9782945b0f7",
-                            Name = "admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = "2228c787-a9e2-43ec-8658-5de9fe6d97c2",
-                            Name = "customer",
-                            NormalizedName = "CUSTOMER"
-                        },
-                        new
-                        {
-                            Id = "25a90f41-2d08-4f31-a111-9d6114af3277",
-                            Name = "delivery",
-                            NormalizedName = "DELIVERY"
-                        },
-                        new
-                        {
-                            Id = "f6e8b045-9c39-49f4-b14f-3dee794e8c56",
-                            Name = "warehousemanager",
-                            NormalizedName = "WAREHOUSEMANAGER"
-                        },
-                        new
-                        {
-                            Id = "b3174a71-41ab-4f46-8312-fb2282f381a6",
-                            Name = "hr",
-                            NormalizedName = "HR"
-                        },
-                        new
-                        {
-                            Id = "991e6fa2-f7d1-4746-b16e-b52a5ca06434",
-                            Name = "supplier",
-                            NormalizedName = "SUPPLIER"
-                        },
-                        new
-                        {
-                            Id = "ec85e4dd-fcd0-46b1-b637-b5d1651ebbc5",
+                            Id = "5d6b1234-78ab-4f6e-8a68-188552d8034c",
                             Name = "technicalsupport",
                             NormalizedName = "TECHNICALSUPPORT"
                         });
@@ -647,7 +605,7 @@ namespace Shanta.Repository.Migrations
                     b.HasOne("Shanta.Core.Entities.Product.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Shanta.Core.Entities.Product.ProductVariant", "ProductVariant")
