@@ -21,5 +21,9 @@ namespace Shanta.Core.Entities.Order
         [ForeignKey("UserId")]
 
         public AppUser? User { get; set; } // Navigation property for User entity
+
+        public Guid ShipmentId { get; set; } // Foreign key to the associated shipment
+
+        public Shipment.Shipment? Shipment { get; set; } // Navigation property for associated shipment
     }
 }

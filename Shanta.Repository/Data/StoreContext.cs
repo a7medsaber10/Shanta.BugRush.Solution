@@ -3,14 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Shanta.Core.Entities.Identity;
 using Shanta.Core.Entities.Order;
 using Shanta.Core.Entities.Product;
+using Shanta.Core.Entities.Shipment;
 using Shanta.Core.Entities.Support;
-using Shanta.Repository.Data.Configurations.Roles;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Shanta.Repository.Data
 {
@@ -50,6 +46,8 @@ namespace Shanta.Repository.Data
         public DbSet<SupportTicket> supportTickets { get; set; }
 
         public DbSet<TicketResponse> TicketResponses { get; set; }
+
+        public DbSet<Shipment> Shipments { get; set; } 
 
 
     }
