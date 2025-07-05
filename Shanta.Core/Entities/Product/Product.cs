@@ -29,5 +29,9 @@ namespace Shanta.Core.Entities.Product
         public bool HasVariants { get; set; } // Indicates if the product has variants
 
         public List<ProductVariant>? Variants { get; set; } // Navigation property for product variants
+
+        public bool OutOfStock { get; set; } // Indicates if the product is out of stock
+
+        public int TotalStock { get; set; } // total stock counts across all warehouses
     }
 }

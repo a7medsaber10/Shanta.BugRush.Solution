@@ -5,6 +5,7 @@ using Shanta.Core.Entities.Order;
 using Shanta.Core.Entities.Product;
 using Shanta.Core.Entities.Shipment;
 using Shanta.Core.Entities.Support;
+using Shanta.Core.Entities.Warehouse;
 using System.Reflection;
 
 
@@ -49,6 +50,15 @@ namespace Shanta.Repository.Data
 
         public DbSet<Shipment> Shipments { get; set; } 
 
+        public DbSet<Warehouse> warehouses { get; set; }
+
+        public DbSet<Stock> stocks { get; set; }
+
+        public DbSet<StockMovement> stockMovements { get; set; }
+
+        public DbSet<SupplyItem> supplyOrderItems { get; set; }
+
+        DbSet<SupplyOrder> supplyOrders { get; set; }
 
     }
 }
