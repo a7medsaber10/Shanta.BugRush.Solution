@@ -16,7 +16,7 @@ namespace Shanta.Core.Entities.Product
 
         public string? Comment { get; set; }
         public Guid ProductId { get; set; }
-        public Product Product { get; set; }
+        public Product? Product { get; set; }
 
         public string UserId { get; set; } // FK to User entity
 

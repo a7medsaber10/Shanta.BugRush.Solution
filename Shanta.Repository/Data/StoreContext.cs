@@ -3,13 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Shanta.Core.Entities.Identity;
 using Shanta.Core.Entities.Order;
 using Shanta.Core.Entities.Product;
-using Shanta.Repository.Data.Configurations.Roles;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Shanta.Core.Entities.Shipment;
+using Shanta.Core.Entities.Support;
+using Shanta.Core.Entities.Warehouse;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Shanta.Repository.Data
 {
@@ -46,6 +44,21 @@ namespace Shanta.Repository.Data
 
         public DbSet<Reviews> Reviews { get; set; }
 
+        public DbSet<SupportTicket> supportTickets { get; set; }
+
+        public DbSet<TicketResponse> TicketResponses { get; set; }
+
+        public DbSet<Shipment> Shipments { get; set; } 
+
+        public DbSet<Warehouse> warehouses { get; set; }
+
+        public DbSet<Stock> stocks { get; set; }
+
+        public DbSet<StockMovement> stockMovements { get; set; }
+
+        public DbSet<SupplyItem> supplyOrderItems { get; set; }
+
+        DbSet<SupplyOrder> supplyOrders { get; set; }
 
     }
 }

@@ -9,7 +9,7 @@ namespace Shanta.Core.Entities.Order
 {
     public class Coupon : BaseEntity
     {
-        public string? Code { get; set; } // Unique code for the coupon
+        public string Code { get; set; } // Unique code for the coupon
 
         [Range(0, 100)]
         public int DiscountAmount { get; set; } // Amount to be discounted
