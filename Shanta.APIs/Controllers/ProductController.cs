@@ -5,7 +5,6 @@ using Shanta.Core.Repository.Contract;
 
 namespace Shanta.APIs.Controllers
 {
-
     public class ProductController : BaseApiController
     {
         private readonly IGenericRepository<Product> _productRepository;
@@ -23,6 +22,8 @@ namespace Shanta.APIs.Controllers
             _brandRepository = brandRepository;
             _categoryRepository = categoryRepository;
         }
+
+
 
 
     }
