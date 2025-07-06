@@ -14,10 +14,10 @@ namespace Shanta.Core.Entities.Product
 
         public decimal Price { get; set; } // Price of the variant, if different from the base product price
 
-        public string ImageUrl { get; set; } // URL of the variant image, if applicable
+        public string? ImageUrl { get; set; } // URL of the variant image, if applicable
 
         public Guid ProductId { get; set; }
-        public Product product { get; set; }
+        public Product? product { get; set; }
 
     }
 }

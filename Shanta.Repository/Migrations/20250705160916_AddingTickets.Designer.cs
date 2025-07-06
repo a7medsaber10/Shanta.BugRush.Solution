@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shanta.Repository.Data;
 
@@ -11,9 +12,11 @@ using Shanta.Repository.Data;
 namespace Shanta.Repository.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20250705160916_AddingTickets")]
+    partial class AddingTickets
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,43 +54,43 @@ namespace Shanta.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c4dd3f0c-58c5-46b3-b86c-a4a9131bd557",
+                            Id = "c9b13baf-6d97-4d1c-a1ba-97ff932a045a",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "7d7b7c7e-c328-4e78-ac00-fbb06aa70659",
+                            Id = "28fac03d-eeda-42fc-b302-4eaf284c1f8f",
                             Name = "customer",
                             NormalizedName = "CUSTOMER"
                         },
                         new
                         {
-                            Id = "c42f89e1-2c4f-4055-b047-0dc19103e506",
+                            Id = "ba649d8e-b066-47bf-8a94-3fb88ca1b110",
                             Name = "delivery",
                             NormalizedName = "DELIVERY"
                         },
                         new
                         {
-                            Id = "774a2d56-f66e-416e-b150-58dfb0232661",
+                            Id = "40dad09e-b18e-4332-8013-9cd11bd25ddc",
                             Name = "warehousemanager",
                             NormalizedName = "WAREHOUSEMANAGER"
                         },
                         new
                         {
-                            Id = "89c558a1-df8f-4140-a81f-133546cf4041",
+                            Id = "e8bcb865-dc0b-46da-8953-03f9ee9d0a00",
                             Name = "hr",
                             NormalizedName = "HR"
                         },
                         new
                         {
-                            Id = "3094657e-0c14-4c45-a04b-a423810e1a77",
+                            Id = "473ce8a9-2263-471d-ab03-d8da9b61af38",
                             Name = "supplier",
                             NormalizedName = "SUPPLIER"
                         },
                         new
                         {
-                            Id = "e9a4b2dd-d525-4cd3-b330-342c2e1b87c8",
+                            Id = "e2555237-49da-456d-88d5-81076e4e7f6d",
                             Name = "technicalsupport",
                             NormalizedName = "TECHNICALSUPPORT"
                         });
@@ -310,9 +313,6 @@ namespace Shanta.Repository.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("ShipmentId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -324,8 +324,6 @@ namespace Shanta.Repository.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ShipmentId");
 
                     b.HasIndex("UserId");
 
@@ -410,16 +408,10 @@ namespace Shanta.Repository.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<bool>("OutOfStock")
-                        .HasColumnType("bit");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TotalStock")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -520,32 +512,6 @@ namespace Shanta.Repository.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("Shanta.Core.Entities.Shipment.Shipment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("DeliveryDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeliveryGuyId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("ShipmentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DeliveryGuyId");
-
-                    b.ToTable("Shipments");
-                });
-
             modelBuilder.Entity("Shanta.Core.Entities.Support.SupportTicket", b =>
                 {
                     b.Property<Guid>("Id")
@@ -611,165 +577,6 @@ namespace Shanta.Repository.Migrations
                     b.ToTable("TicketResponses");
                 });
 
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.Stock", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("ProductVariantId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UnitMeasure")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("WarehouseId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("ProductVariantId");
-
-                    b.HasIndex("WarehouseId");
-
-                    b.ToTable("stocks");
-                });
-
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.StockMovement", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Movement")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("MovementDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("StockId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<Guid>("WarehouseId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StockId");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("WarehouseId");
-
-                    b.ToTable("stockMovements");
-                });
-
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.SupplyItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductVariantId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("SupplyOrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("ProductVariantId");
-
-                    b.HasIndex("SupplyOrderId");
-
-                    b.ToTable("supplyOrderItems");
-                });
-
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.SupplyOrder", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("OrderDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<Guid>("WarehouseId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("WarehouseId");
-
-                    b.ToTable("supplyOrders");
-                });
-
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.Warehouse", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ManagerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ManagerId");
-
-                    b.ToTable("warehouses");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -823,19 +630,11 @@ namespace Shanta.Repository.Migrations
 
             modelBuilder.Entity("Shanta.Core.Entities.Order.Order", b =>
                 {
-                    b.HasOne("Shanta.Core.Entities.Shipment.Shipment", "Shipment")
-                        .WithMany("orders")
-                        .HasForeignKey("ShipmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Shanta.Core.Entities.Identity.AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Shipment");
 
                     b.Navigation("User");
                 });
@@ -935,17 +734,6 @@ namespace Shanta.Repository.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Shanta.Core.Entities.Shipment.Shipment", b =>
-                {
-                    b.HasOne("Shanta.Core.Entities.Identity.AppUser", "DeliveryGuy")
-                        .WithMany()
-                        .HasForeignKey("DeliveryGuyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DeliveryGuy");
-                });
-
             modelBuilder.Entity("Shanta.Core.Entities.Support.SupportTicket", b =>
                 {
                     b.HasOne("Shanta.Core.Entities.Identity.AppUser", "User")
@@ -976,113 +764,6 @@ namespace Shanta.Repository.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.Stock", b =>
-                {
-                    b.HasOne("Shanta.Core.Entities.Product.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Shanta.Core.Entities.Product.ProductVariant", "productVariant")
-                        .WithMany()
-                        .HasForeignKey("ProductVariantId");
-
-                    b.HasOne("Shanta.Core.Entities.Warehouse.Warehouse", "Warehouse")
-                        .WithMany()
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-
-                    b.Navigation("Warehouse");
-
-                    b.Navigation("productVariant");
-                });
-
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.StockMovement", b =>
-                {
-                    b.HasOne("Shanta.Core.Entities.Warehouse.Stock", "Stock")
-                        .WithMany()
-                        .HasForeignKey("StockId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Shanta.Core.Entities.Identity.AppUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.HasOne("Shanta.Core.Entities.Warehouse.Warehouse", "Warehouse")
-                        .WithMany()
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Stock");
-
-                    b.Navigation("User");
-
-                    b.Navigation("Warehouse");
-                });
-
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.SupplyItem", b =>
-                {
-                    b.HasOne("Shanta.Core.Entities.Product.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Shanta.Core.Entities.Product.ProductVariant", "ProductVariant")
-                        .WithMany()
-                        .HasForeignKey("ProductVariantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Shanta.Core.Entities.Warehouse.SupplyOrder", "SupplyOrder")
-                        .WithMany("SupplyItems")
-                        .HasForeignKey("SupplyOrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-
-                    b.Navigation("ProductVariant");
-
-                    b.Navigation("SupplyOrder");
-                });
-
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.SupplyOrder", b =>
-                {
-                    b.HasOne("Shanta.Core.Entities.Identity.AppUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Shanta.Core.Entities.Warehouse.Warehouse", "Warehouse")
-                        .WithMany()
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-
-                    b.Navigation("Warehouse");
-                });
-
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.Warehouse", b =>
-                {
-                    b.HasOne("Shanta.Core.Entities.Identity.AppUser", "Manager")
-                        .WithMany()
-                        .HasForeignKey("ManagerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Manager");
-                });
-
             modelBuilder.Entity("Shanta.Core.Entities.Order.Order", b =>
                 {
                     b.Navigation("OrderItems");
@@ -1093,19 +774,9 @@ namespace Shanta.Repository.Migrations
                     b.Navigation("Variants");
                 });
 
-            modelBuilder.Entity("Shanta.Core.Entities.Shipment.Shipment", b =>
-                {
-                    b.Navigation("orders");
-                });
-
             modelBuilder.Entity("Shanta.Core.Entities.Support.SupportTicket", b =>
                 {
                     b.Navigation("Responses");
-                });
-
-            modelBuilder.Entity("Shanta.Core.Entities.Warehouse.SupplyOrder", b =>
-                {
-                    b.Navigation("SupplyItems");
                 });
 #pragma warning restore 612, 618
         }
