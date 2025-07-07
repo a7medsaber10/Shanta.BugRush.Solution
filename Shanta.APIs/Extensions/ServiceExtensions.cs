@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Shanta.APIs.Helpers;
 using Shanta.Core.Entities.Identity;
 using Shanta.Core.Repository.Contract;
 using Shanta.Repository.Data;
@@ -12,6 +13,9 @@ namespace Shanta.APIs.Extensions
         {
             // register the service of GenericRepository
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            // register AutoMapper service
+            services.AddAutoMapper(typeof(MappingProfile));
 
             return services;
         }
