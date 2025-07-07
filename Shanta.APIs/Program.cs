@@ -67,6 +67,8 @@ namespace Shanta.APIs
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseStaticFiles();
+
 
             app.MapControllers();
 
