@@ -11,6 +11,7 @@ namespace Shanta.APIs.Helpers
             CreateMap<Product, ProductDTO>()
                 .ForMember(d => d.Brand, s => s.MapFrom(o => o.Brand.BrandName))
                 .ForMember(d => d.Category, s => s.MapFrom(o => o.Category.CategoryName))
+                .ForMember(d => d.ImageUrl, o => o.MapFrom<ProductImageUrlResolver>())
                 .ReverseMap();
         }
     }
