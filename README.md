@@ -18,6 +18,7 @@ Talabat.Solution/
 
 - **ASP.NET Core** - Web API
 - **Entity Framework Core** - ORM
+- **AutoMapper** - DTO ↔ Entity mapping
 - **Clean Separation** - via Onion Architecture principles
 
 ---
