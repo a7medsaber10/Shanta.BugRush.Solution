@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shanta.APIs.DTOs;
+using Shanta.APIs.Errors;
 using Shanta.Core.Entities.Product;
 using Shanta.Core.Repository.Contract;
 using Shanta.Core.Specifications.ProductSpecifications;
@@ -38,6 +39,21 @@ namespace Shanta.APIs.Controllers
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductDTO>>(products);
 
             return Ok(data);
+        }
+
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProductDTO>> GetProductById(Guid id)
+        {
+            var spec = new ProductWithBrandAndCategorySpecifications(id);
+            var product = await _productRepository.GetWithSpecAsync(spec);
+
+            if (product == null)
+            {
+                return NotFound(new APIResponse(404, "Product Not Found!"));
+            }
+
+            return Ok(_mapper.Map<Product, ProductDTO>(product));
         }
 
 
