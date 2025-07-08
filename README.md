@@ -8,10 +8,10 @@ This solution adopts **Onion Architecture**, structured into clear layers:
 ```bash
 Talabat.Solution/
 │
-├── Talabat.APIs # ASP.NET Core Web API layer
-├── Talabat.Core # Domain entities & contracts
-├── Talabat.Repository # Infrastructure: EF Core, Redis
-└── Talabat.Services # Application services, business logic
+├── Shanta.APIs # ASP.NET Core Web API layer
+├── Shanta.Core # Domain entities & contracts
+├── Shanta.Repository # Infrastructure: EF Core, Redis
+└── Shanta.Services # Application services, business logic
 ```
 
 ### 🔁 Technologies & Tools
