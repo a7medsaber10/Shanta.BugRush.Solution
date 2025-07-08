@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Shanta.APIs.Errors;
 using Shanta.APIs.Helpers;
 using Shanta.Core.Entities.Identity;
 using Shanta.Core.Repository.Contract;
@@ -16,6 +18,23 @@ namespace Shanta.APIs.Extensions
 
             // register AutoMapper service
             services.AddAutoMapper(typeof(MappingProfile));
+
+            // validation error configuration
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = (actionContext) =>
+                {
+                    var errors = actionContext.ModelState.Where(p => p.Value.Errors.Count() > 0)
+                                                         .SelectMany(p => p.Value.Errors)
+                                                         .Select(E => E.ErrorMessage).ToList();
+                    var response = new ValidationErrorResponse()
+                    {
+                        Errors = errors
+                    };
+
+                    return new BadRequestObjectResult(response);
+                };
+            });
 
             return services;
         }
