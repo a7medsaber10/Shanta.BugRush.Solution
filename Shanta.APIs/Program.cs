@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Shanta.APIs.Extensions;
+using Shanta.APIs.Middlewares;
 using Shanta.Core.Repository.Contract;
 using Shanta.Repository.Data;
 using Shanta.Repository.Repositories;
@@ -55,6 +56,8 @@ namespace Shanta.APIs
                 var logger = loggerFactory.CreateLogger<Program>();
                 logger.LogError(ex, "An Error Occured During Migration");
             }
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
