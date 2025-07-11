@@ -57,6 +57,7 @@ namespace Shanta.APIs
                 logger.LogError(ex, "An Error Occured During Migration");
             }
 
+            // middleware for catching server error
             app.UseMiddleware<ExceptionMiddleware>();
 
             // Configure the HTTP request pipeline.
@@ -64,6 +65,9 @@ namespace Shanta.APIs
             {
                 app.UseSwaggerMiddleWare();
             }
+
+
+            app.UseStatusCodePagesWithReExecute("/Errors/{0}");
 
             app.UseHttpsRedirection();
 

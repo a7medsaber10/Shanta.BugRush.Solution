@@ -43,6 +43,8 @@ namespace Shanta.APIs.Controllers
 
 
         [HttpGet("{id}")]
+        [ProducesResponseType(typeof(ProductDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(APIResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProductDTO>> GetProductById(Guid id)
         {
             var spec = new ProductWithBrandAndCategorySpecifications(id);
