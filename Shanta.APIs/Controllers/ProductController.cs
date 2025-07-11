@@ -59,6 +59,20 @@ namespace Shanta.APIs.Controllers
         }
 
 
+        [HttpGet("brands")]
+        public async Task<ActionResult<IEnumerable<ProductBrand>>> GetBrands()
+        {
+            var brands = await _brandRepository.GetAllAsync();   
+            return Ok(brands);
+        }
+
+
+        [HttpGet("categories")]
+        public async Task<ActionResult<IEnumerable<ProductCategory>>> GetCategories()
+        {
+            var categories = await _categoryRepository.GetAllAsync();
+            return Ok(categories);
+        }
 
 
     }

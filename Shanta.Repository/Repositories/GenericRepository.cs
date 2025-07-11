@@ -40,5 +40,15 @@ namespace Shanta.Repository.Repositories
         {
             return await ApplySpecifications(specification).CountAsync();
         }
+
+        public async Task<T> GetAsync(int id)
+        {
+            return await _dbContext.Set<T>().FindAsync(id);
+        }
+
+        public async Task<IReadOnlyList<T>> GetAllAsync()
+        {
+            return await _dbContext.Set<T>().ToListAsync();
+        }
     }
 }
