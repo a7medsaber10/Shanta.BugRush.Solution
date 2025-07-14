@@ -12,8 +12,10 @@ namespace Shanta.Core.Specifications.ProductSpecifications
         public ProductWithBrandAndCategorySpecifications(ProductSpecParams specParams) : base
             (
                 p =>
+                // Search
                 (string.IsNullOrEmpty(specParams.Search) || p.Name.ToLower().Contains(specParams.Search.ToLower()))
                 &&
+                // Filteration
                 (!specParams.BrandId.HasValue || p.BrandId == specParams.BrandId.Value)
                 &&
                 (!specParams.CategoryId.HasValue || p.CategoryId == specParams.CategoryId.Value)
@@ -44,6 +46,7 @@ namespace Shanta.Core.Specifications.ProductSpecifications
                 AddOrderBy(p => p.Name);
             }
 
+            // Pagination
             ApplyPagination((specParams.PageIndex - 1) * specParams.PageSize, specParams.PageSize);
         }
 
