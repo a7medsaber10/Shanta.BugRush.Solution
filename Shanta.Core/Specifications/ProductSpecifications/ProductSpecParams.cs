@@ -9,5 +9,11 @@ namespace Shanta.Core.Specifications.ProductSpecifications
     public class ProductSpecParams
     {
         public string? Sort { get; set; }
+
+        public Guid? BrandId { get; set; }
+
+        public Guid? CategoryId { get; set; }
+
+
     }
 }

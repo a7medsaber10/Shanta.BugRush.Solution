@@ -9,7 +9,13 @@ namespace Shanta.Core.Specifications.ProductSpecifications
 {
     public class ProductWithBrandAndCategorySpecifications : BaseSpecifications<Product>
     {
-        public ProductWithBrandAndCategorySpecifications(ProductSpecParams specParams)
+        public ProductWithBrandAndCategorySpecifications(ProductSpecParams specParams) : base
+            (
+                p => 
+                (!specParams.BrandId.HasValue || p.BrandId == specParams.BrandId.Value)
+                &&
+                (!specParams.CategoryId.HasValue || p.CategoryId == specParams.CategoryId.Value)
+            )
         {
             // Includes
             Includes.Add(p => p.Brand);
