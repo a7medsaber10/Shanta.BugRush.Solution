@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shanta.APIs.DTOs;
 using Shanta.APIs.Errors;
+using Shanta.APIs.Helpers;
 using Shanta.Core.Entities.Product;
 using Shanta.Core.Repository.Contract;
 using Shanta.Core.Specifications.ProductSpecifications;
@@ -38,7 +39,7 @@ namespace Shanta.APIs.Controllers
 
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductDTO>>(products);
 
-            return Ok(data);
+            return Ok(new Pagination<ProductDTO>(specParams.PageSize, specParams.PageIndex, data, 5));
         }
 
 
