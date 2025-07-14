@@ -9,10 +9,33 @@ namespace Shanta.Core.Specifications.ProductSpecifications
 {
     public class ProductWithBrandAndCategorySpecifications : BaseSpecifications<Product>
     {
-        public ProductWithBrandAndCategorySpecifications()
+        public ProductWithBrandAndCategorySpecifications(ProductSpecParams specParams)
         {
+            // Includes
             Includes.Add(p => p.Brand);
             Includes.Add(p => p.Category);
+
+            // Sort
+            if (!string.IsNullOrEmpty(specParams.Sort))
+            {
+                switch (specParams.Sort)
+                {
+                    case "price":
+                        AddOrderBy(p => p.Price);
+                        break;
+                    case "priceDesc":
+                        AddOrderByDesc(p => p.Price);
+                        break;
+                    default:
+                        AddOrderBy(p => p.Name);
+                        break;
+                }
+            }
+            else
+            {
+                AddOrderBy(p => p.Name);
+            }
+
         }
 
         public ProductWithBrandAndCategorySpecifications(Guid id) : base(p => p.Id == id)
