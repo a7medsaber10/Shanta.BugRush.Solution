@@ -15,6 +15,6 @@ namespace Shanta.Core.Repository.Contract
         Task<IReadOnlyList<T>> GetAllWithSpecAsync(ISpecification<T> specification);
         Task<T> GetWithSpecAsync(ISpecification<T> specification);
         Task<int> GetCountAsync(ISpecification<T> specification);
- 
+
     }
 }

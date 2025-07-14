@@ -39,7 +39,11 @@ namespace Shanta.APIs.Controllers
 
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductDTO>>(products);
 
-            return Ok(new Pagination<ProductDTO>(specParams.PageSize, specParams.PageIndex, data, 5));
+            var countSpec = new ProductWithFiltrationForCountSpec(specParams);
+
+            var count = await _productRepository.GetCountAsync(countSpec);
+
+            return Ok(new Pagination<ProductDTO>(specParams.PageSize, specParams.PageIndex, data, count));
         }
 
 
