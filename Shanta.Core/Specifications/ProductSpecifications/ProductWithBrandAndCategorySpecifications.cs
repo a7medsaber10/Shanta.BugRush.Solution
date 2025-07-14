@@ -42,6 +42,7 @@ namespace Shanta.Core.Specifications.ProductSpecifications
                 AddOrderBy(p => p.Name);
             }
 
+            ApplyPagination((specParams.PageIndex - 1) * specParams.PageSize, specParams.PageSize);
         }
 
         public ProductWithBrandAndCategorySpecifications(Guid id) : base(p => p.Id == id)
