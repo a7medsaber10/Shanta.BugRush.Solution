@@ -26,7 +26,7 @@ namespace Shanta.Core.Specifications.ProductSpecifications
 
         public int PageIndex { get; set; } = 1;
 
-
+        public string? Search { get; set; }
 
     }
 }
